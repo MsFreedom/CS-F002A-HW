@@ -1,2 +1,3 @@
-﻿  Hallow World.cpp
-  Hellow World.vcxproj -> F:\Git\CS F002A\Hellow World\x64\Debug\Hellow World.exe
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: 中间目录(x64\Debug\)包含从另一个项目(Hellow World.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
+  hellow_world.cpp
+  Hellow World.vcxproj -> F:\Git\CS F002A\Hellow World\x64\Debug\hellow_world.exe
