@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Limerick.cpp">
+    <ClCompile Include="Draw_Cat.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
   </ItemGroup>
