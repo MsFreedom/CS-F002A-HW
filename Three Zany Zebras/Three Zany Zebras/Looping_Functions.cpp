@@ -35,18 +35,24 @@ bool play_game(int n) {
     return false;
 }
 
+
 // Miniquest 2: Etox
-double etox(double x, size_t n) {
+double etox(double x, size_t n)
+{
     double sum = 1.0;
-    double numerator = 1.0;
-    double denominator = 1.0;
-    for (size_t i = 1; i <= n; i++) {
-        numerator *= x;
-        denominator *= i;
-        sum += numerator / denominator;
+    for (int i = 1; i <= int(n); i++)
+    {
+        int fact = 1;
+        for (int j = 1; j <= i; j++)
+        {
+            fact *= j;
+        }
+        sum += pow(x, i) / fact;
     }
     return sum;
 }
+
+
 
 // Miniquest 3: Char counts
 size_t count_chars(string s, char c) {
