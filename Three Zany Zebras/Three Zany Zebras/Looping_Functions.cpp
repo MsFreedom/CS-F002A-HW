@@ -39,18 +39,24 @@ bool play_game(int n) {
 // Miniquest 2: Etox
 double etox(double x, size_t n)
 {
-    double sum = 1.0;
-    for (int i = 1; i <= int(n); i++)
+    if (n == 0) {
+        return 0.0; // 当 n 为 0 时，直接返回 0
+    }
+
+    double sum = 1.0; // 初始项为 1
+
+    for (size_t i = 1; i < n; i++) // 从 1 开始迭代，直到 i < n
     {
-        int fact = 1;
-        for (int j = 1; j <= i; j++)
+        double term = 1.0; // 初始化项为 1.0
+        for (size_t j = 1; j <= i; j++) // 计算 x 的 i 次幂除以 i 的阶乘
         {
-            fact *= j;
+            term *= x / j;
         }
-        sum += pow(x, i) / fact;
+        sum += term; // 将项加到总和中
     }
     return sum;
 }
+
 
 
 
@@ -77,13 +83,17 @@ size_t gcd(size_t a, size_t b) {
 
 // Miniquest 5: Terms of an AP
 string get_ap_terms(int a, int d, size_t n) {
-    string result = to_string(a);
-    for (size_t i = 1; i < n; i++) {
-        result += ",";
-        result += to_string(a + i * d);
+    stringstream ss;
+    for (size_t i = 0; i < n; i++) {
+        if (i > 0) {
+            ss << ","; // 在项之间添加逗号
+        }
+        int currentTerm = a + static_cast<int>(i) * d; // 使用有符号整数计算当前项
+        ss << currentTerm;
     }
-    return result;
+    return ss.str();
 }
+
 
 // Miniquest 6: Terms of a GP
 string get_gp_terms(double a, double r, size_t n) {
